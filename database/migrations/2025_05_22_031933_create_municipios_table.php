@@ -19,7 +19,15 @@ return new class extends Migration
                 ->on('departamentos')
                 ->onDelete('cascade');
             $table->string('nombre');
-          
+
+        });
+
+        Schema::table('pacientes', function (Blueprint $table) {
+            $table->unsignedBigInteger('municipio_id')->after('departamento_id');;
+            $table->foreign('municipio_id')
+                ->references('id')
+                ->on('municipios')
+                ->onDelete('cascade');
         });
     }
 

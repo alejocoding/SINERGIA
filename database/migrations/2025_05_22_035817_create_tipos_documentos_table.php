@@ -17,7 +17,7 @@ return new class extends Migration
         });
 
         Schema::table('pacientes', function(Blueprint $table){
-            $table->unsignedBigInteger('tipo_documento_id');
+            $table->unsignedBigInteger('tipo_documento_id')->after('id');;
             $table->foreign('tipo_documento_id')
                   ->references('id')
                   ->on('tipos_documentos')

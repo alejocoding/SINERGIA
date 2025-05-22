@@ -16,8 +16,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
+            'id' => '1107978187',
             'name' => 'Alejandro Velandia',
-            'password' =>'12345678',
+            'password' =>'1234567890',
         ]);
 
         $this->call(DepartamentosTableSeeder::class);
